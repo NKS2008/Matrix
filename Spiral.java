@@ -2,22 +2,22 @@ class Main{
   public static void spiral(int[][]m){
     int t = 0;
     int b = m.length-1;
-    int r = 0;
-    int l = m[0].length-1;
+    int l = 0;
+    int r = m[0].length-1;
     while(l <= r && t <= b){
       for(int i = l; i <= r; i++)
         System.out.println(m[t][i]);
       t++;
-      for(int i = b; i <= t; i++)
+      for(int i = t; i <= b; i++)
         System.out.println(m[i][r]);
       r--;
-      for(l<=r)
+      if(l<=r)
         for(int i = r; i >= l; i--)
           System.out.println(m[b][i]);
         b--;
-      for(b<=t)
+      if(b<=t)
           for(int i = t; i>=b;i--)
-            System.out.println(m[i][l])
+            System.out.println(m[i][l]);
           l++;
     }
   }
